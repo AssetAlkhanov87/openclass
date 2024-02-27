@@ -15,11 +15,40 @@
 				background-color: blue;
 			}
 		}
+		 body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
 	</style>
 </head>
 <body>
 	<h1>Data representation!</h1>
+ <h2>Answer the Question:</h2>
+    <p id="question">What is the capital of France?</p>
 
-<p>Test page 1234!</p>
+    <label for="userAnswer">Your Answer: </label>
+    <input type="text" id="userAnswer">
+
+    <button onclick="checkAnswer()">Submit Answer</button>
+
+    <p id="feedback"></p>
+
+    <script>
+        function checkAnswer() {
+            // Get the user's entered answer
+            var userAnswer = document.getElementById("userAnswer").value.toLowerCase();
+
+            // Correct answer to the question
+            var correctAnswer = "paris";
+
+            // Check if the user's answer is correct
+            if (userAnswer === correctAnswer) {
+                document.getElementById("feedback").innerHTML = "Correct! Well done.";
+            } else {
+                document.getElementById("feedback").innerHTML = "Incorrect. Please try again.";
+            }
+        }
+    </script>
 </body>
 </html>
