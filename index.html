@@ -28,11 +28,11 @@
  <h2>Answer the Question:</h2>
  	<script type="text/javascript">
  		var rand_num = Math.floor(Math.random() * 10) + 1;
- 		document.getElementById("rand_val").innerHTML = rand_num;
+ 		document.getElementById("rand_val").innerHTML = parseStr(rand_num);
  	</script>
     <p id="question">How many bits in <span id="rand_val"> </span> bytes? </p>
 
-    <label for="userAnswer">Your Answer: </label>
+    <label for="userAnswer"></label>
     <input type="text" id="userAnswer">
 
     <button onclick="checkAnswer()">Submit Answer</button>
