@@ -17,7 +17,7 @@
 		}
 		 #test_area {
             font-family: Arial, sans-serif;
-            text-align: center;
+            text-align: left;
             margin-top: 50px;
         }
 	</style>
@@ -26,7 +26,11 @@
 	<div id="test_area">
 		<h1>Data representation!</h1>
  <h2>Answer the Question:</h2>
-    <p id="question">What is the capital of France?</p>
+ 	<script type="text/javascript">
+ 		var rand_num = Math.floor(Math.random() * 10) + 1;
+ 		document.getElementById("rand_val").innerHTML = rand_num;
+ 	</script>
+    <p id="question">How many bits in <span id="rand_val"> </span> bytes? </p>
 
     <label for="userAnswer">Your Answer: </label>
     <input type="text" id="userAnswer">
@@ -41,10 +45,10 @@
             var userAnswer = document.getElementById("userAnswer").value.toLowerCase();
 
             // Correct answer to the question
-            var correctAnswer = "paris";
+            var correctAnswer = rand_num;
 
             // Check if the user's answer is correct
-            if (userAnswer === correctAnswer) {
+            if (parseInt(userAnswer) === correctAnswer) {
                 document.getElementById("feedback").innerHTML = "Correct! Well done.";
             } else {
                 document.getElementById("feedback").innerHTML = "Incorrect. Please try again.";
